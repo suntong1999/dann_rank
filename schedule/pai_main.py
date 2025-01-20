@@ -113,14 +113,6 @@ def run(FLAGS):
                     slice_id=slice_id,
                     name=name,
                 )
-            elif FLAGS.dataset_type=="v3":
-                batch_data = get_batch_data_v3(
-                    table,
-                    batch_size=FLAGS.batch_size,
-                    slice_count=slice_count,
-                    slice_id=slice_id,
-                    name=name,
-                )
             reader = tf.python_io.TableReader(
                 table[0], slice_count=slice_count, slice_id=slice_id
             )
